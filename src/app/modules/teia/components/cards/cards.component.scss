@@ -1,0 +1,41 @@
+/* Estilos para o container dos cards */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1%;
+}
+
+/* Estilos para cada card */
+.card{
+  width: 20%;
+  height: auto;
+}
+
+/* Estilos para o conteúdo de cada card */
+.example-card{
+  display: flex;
+  margin: 1%;
+  border-radius: 2%;
+  align-items: flex-start;
+}
+
+/* Estilos para os botões de cada card */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Estilos para o paginador */
+.paginador{
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos para telas pequenas */
+@media (max-width: 600px) {
+  .card {
+    flex-basis: 100%;
+  }
+}

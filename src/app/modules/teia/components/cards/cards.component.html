@@ -1,0 +1,34 @@
+<!-- O container para os cards -->
+<div class="container">
+  <!-- Um card para cada foto na fatia de página -->
+  <div class="card" *ngFor="let photos of pageSlice, trackById">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title>{{photos.id}}</mat-card-title>
+        <mat-card-subtitle>Album {{photos.albumId}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{photos.thumbnailUrl}}" alt="Color Photo" height="100%" width="100%">
+      <mat-card-content>
+        <p>{{photos.title}}</p>
+      </mat-card-content>
+      <mat-card-actions class="buttons">
+        <button mat-icon-button matTooltip="Basic" aria-label="Example icon-button with a heart icon">
+          <mat-icon>add_shopping_cart</mat-icon>
+        </button>.
+        <button mat-icon-button matTooltip="Basic" aria-label="Example icon-button with a heart icon">
+          <mat-icon>comment</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<!-- O paginador para navegar entre as páginas de cards -->
+<div class="paginador">
+<mat-paginator [length]="this.data.length"
+  [pageSize]="10"
+  [pageIndex]="[0,20, 40]"
+  (page)="OnPageChange($event)">
+</mat-paginator>
+</div>
